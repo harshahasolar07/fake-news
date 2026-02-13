@@ -1,0 +1,30 @@
+# Model Configuration
+model:
+  name: "fake_news_classifier"
+  version: "1.0.0"
+  baseline_f1_threshold: 0.75  # Minimum F1 score to deploy
+
+# Data Configuration
+data:
+  train_path: "data/train.csv"
+  test_path: "data/test.csv"
+  text_column: "text"
+  label_column: "label"
+
+# Training Configuration
+training:
+  test_size: 0.2
+  random_state: 42
+  max_features: 5000
+  ngram_range: [1, 2]
+
+# MLflow Configuration
+mlflow:
+  tracking_uri: "mlruns"
+  experiment_name: "fake_news_detection"
+  
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+ 
